@@ -25,3 +25,17 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c8aa00;
+  height: 10%;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgba(241, 218, 143, 0.421);
+}
