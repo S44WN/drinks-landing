@@ -1,22 +1,57 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 import bunchedCans from "../../public/images/all-cans-bunched.png";
 import { Bounded } from "@/components/Bounded";
 import Link from "next/link";
 import { TextSplitter } from "./TextSplitter";
 
+gsap.registerPlugin(useGSAP);
+
 type Props = {
   className?: string;
 };
 
 export default function Hero({}: Props) {
+  useGSAP(() => {
+    const introTl = gsap.timeline();
+
+    introTl
+      .set(".hero", { opacity: 1 })
+      .from(".hero-header-word", {
+        scale: 3,
+        opacity: 0,
+        ease: "power4.in",
+        stagger: 1,
+      })
+      .from(
+        ".hero-subheading",
+        {
+          opacity: 0,
+          y: 30,
+        },
+        "+=0.3"
+      )
+      .from(".hero-body", {
+        opacity: 0,
+        y: 10,
+      })
+      .from(".hero-button", {
+        opacity: 0,
+        y: 10,
+        duration: 0.6,
+      });
+  });
   return (
-    <Bounded className="hero">
+    <Bounded className="hero opacity-0">
       <div className="grid">
         <div className="grid h-screen place-items-center ">
           <div className="grid auto-rows-min place-items-center text-center">
-            <h1 className="font-[family-name:var(--font-montserrat)] hero-header lg:text-[8rem]  md:text-[6rem] text-6xl font-black uppercase leading-[.8] text-orange-400">
+            <h1 className="font-[family-name:var(--font-montserrat)] hero-header lg:text-[8rem]  md:text-[6rem] text-6xl font-black uppercase leading-[.8] text-sky-800">
               <TextSplitter
                 text="Taste The Thunder"
                 wordDisplayStyle="block"
@@ -31,7 +66,7 @@ export default function Hero({}: Props) {
             </p>
             <Link
               href={"/"}
-              className="hero-button mt-12 text-xl font-semibold text-sky-950 leading-[.9] bg-orange-400 hover:bg-orange-500 rounded-md px-8 py-4 transition-all duration-200 ease-in-out tracking-wide "
+              className="hero-button mt-12 text-xl font-semibold text-sky-950  bg-sky-400 hover:bg-sky-500 rounded-md px-5 py-3 transition-colors duration-150 ease-in-out tracking-wide "
             >
               Shop Now
             </Link>

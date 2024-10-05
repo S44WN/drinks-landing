@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${brightMelody.variable} ${montserrat.variable} antialiased overflow-x-hidden bg-yellow-200 `}
+        className={`${brightMelody.variable} ${montserrat.variable} antialiased overflow-x-hidden bg-sky-200 `}
       >
         <Header />
         <main>{children}</main>
