@@ -4,13 +4,14 @@ import Image from "next/image";
 import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import bunchedCans from "../../public/images/all-cans-bunched.png";
 import { Bounded } from "@/components/Bounded";
 import Link from "next/link";
 import { TextSplitter } from "./TextSplitter";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 type Props = {
   className?: string;
@@ -44,6 +45,42 @@ export default function Hero({}: Props) {
         opacity: 0,
         y: 10,
         duration: 0.6,
+      });
+
+    const scrollTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1.5,
+        markers: true,
+      },
+    });
+
+    scrollTl
+      .fromTo(
+        "body",
+        {
+          backgroundColor: "#35d0ef",
+        },
+        {
+          backgroundColor: "#35ffe1",
+          overwrite: "auto",
+        },
+        1
+      )
+      .from(".text-side-heading .split-char", {
+        scale: 1.3,
+        opacity: 0,
+        y: 20,
+        rotate: -20,
+        stagger: 0.1,
+        ease: "back.out(3)",
+        duration: 0.5,
+      })
+      .from(".text-side-body", {
+        opacity: 0,
+        y: 20,
       });
   });
   return (
