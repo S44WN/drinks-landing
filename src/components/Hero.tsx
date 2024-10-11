@@ -88,7 +88,7 @@ export default function Hero({}: Props) {
       <div className="grid">
         <div className="grid h-screen place-items-center ">
           <div className="grid auto-rows-min place-items-center text-center">
-            <h1 className="font-[family-name:var(--font-montserrat)] hero-header lg:text-[8rem]  md:text-[6rem] text-6xl font-black uppercase leading-[.8] text-sky-800">
+            <h1 className="font-[family-name:var(--font-canopee)] hero-header lg:text-[8rem]  md:text-[6rem] text-6xl font-black uppercase leading-[.8] text-sky-800">
               <TextSplitter
                 text="Taste The Thunder"
                 wordDisplayStyle="block"
@@ -118,7 +118,7 @@ export default function Hero({}: Props) {
             className="w-full md:hidden"
           />
           <div className="">
-            <h2 className="text-side-heading text-balance uppercase text-5xl font-black text-sky-950 lg:text-7xl ">
+            <h2 className="text-side-heading text-balance uppercase text-5xl font-black text-sky-950 lg:text-7xl font-[family-name:var(--font-canopee)] ">
               <TextSplitter text="Try all 5 Flavours" />
             </h2>
             <p className="text-side-body mt-4 max-w-xl text-balance text-xl font-[500] text-sky-950 leading-[.99]">
