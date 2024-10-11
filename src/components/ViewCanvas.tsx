@@ -1,7 +1,7 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import React from "react";
+import { View } from "@react-three/drei";
 
 type Props = object;
 
@@ -22,13 +22,7 @@ export default function ViewCanvas({}: Props) {
       gl={{ antialias: true }}
       camera={{ position: [0, 0, 5], fov: 30 }}
     >
-      <ambientLight intensity={0.5} />
-      <spotLight position={[1, 1, 1]} intensity={3} />
-
-      <mesh rotation={[0.5, 0.5, 0]} position={[1, 0, 0]}>
-        <boxGeometry />
-        <meshStandardMaterial color="blue" />
-      </mesh>
+      <View.Port />
     </Canvas>
   );
 }

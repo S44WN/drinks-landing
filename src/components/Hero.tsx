@@ -10,6 +10,8 @@ import bunchedCans from "../../public/images/all-cans-bunched.png";
 import { Bounded } from "@/components/Bounded";
 import Link from "next/link";
 import { TextSplitter } from "./TextSplitter";
+import { View } from "@react-three/drei";
+import HeroScene from "@/components/HeroScene";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -85,6 +87,9 @@ export default function Hero({}: Props) {
   });
   return (
     <Bounded className="hero opacity-0">
+      <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
+        <HeroScene />
+      </View>
       <div className="grid">
         <div className="grid h-screen place-items-center ">
           <div className="grid auto-rows-min place-items-center text-center">
