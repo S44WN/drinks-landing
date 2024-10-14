@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Header from "@/components/Header";
+// import Header from "@/components/Header";
 import ViewCanvas from "@/components/ViewCanvas";
 
 const brightMelody = localFont({
@@ -39,7 +39,7 @@ export default function RootLayout({
       <body
         className={`${brightMelody.variable} ${montserrat.variable} ${canopee.variable} antialiased overflow-x-hidden bg-sky-200 `}
       >
-        <Header />
+        {/* <Header /> */}
         <main>
           {children}
           <ViewCanvas />
