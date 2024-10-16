@@ -37,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${brightMelody.variable} ${montserrat.variable} ${canopee.variable} antialiased overflow-x-hidden bg-sky-200 `}
+        className={`${brightMelody.variable} ${montserrat.variable} ${canopee.variable} antialiased overflow-x-hidden bg-red-200 `}
       >
         {/* <Header /> */}
         <main>

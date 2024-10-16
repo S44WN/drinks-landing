@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import bunchedCans from "../../public/images/all-cans-bunched.png";
+// import bunchedCans from "../../public/images/all-cans-bunched.png";
 import { Bounded } from "@/components/Bounded";
 import Link from "next/link";
 import { TextSplitter } from "./TextSplitter";
@@ -56,7 +56,7 @@ export default function Hero({}: Props) {
         start: "top top",
         end: "bottom bottom",
         scrub: 1.5,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -64,10 +64,10 @@ export default function Hero({}: Props) {
       .fromTo(
         "body",
         {
-          backgroundColor: "#35d0ef",
+          backgroundColor: "#f87171",
         },
         {
-          backgroundColor: "#35ffe1",
+          backgroundColor: "#ffedd5",
           overwrite: "auto",
         },
         1
@@ -88,47 +88,47 @@ export default function Hero({}: Props) {
   });
   return (
     <Bounded className="hero opacity-0">
-      <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh] hidden h-screen w-screen md:block">
+      <View className="hero-scene pointer-events-none sticky top-0 z-50 -mt-[100vh]  h-screen w-screen md:block">
         <HeroScene />
         <Bubbles />
       </View>
       <div className="grid">
         <div className="grid h-screen place-items-center ">
           <div className="grid auto-rows-min place-items-center text-center">
-            <h1 className="font-[family-name:var(--font-canopee)] hero-header lg:text-[8rem]  md:text-[6rem] text-6xl font-black uppercase leading-[.8] text-sky-800">
+            <h1 className="font-[family-name:var(--font-canopee)] hero-header lg:text-[7rem]  md:text-[5rem] text-5xl font-black uppercase leading-[.8] text-orange-100">
               <TextSplitter
-                text="Taste The Thunder"
+                text="Bubbles-That Spark Joy!"
                 wordDisplayStyle="block"
                 className="hero-header-word"
               />
             </h1>
-            <h2 className="hero-subheading mt-4 text-2xl font-semibold text-sky-950 lg:text-4xl">
+            <h2 className=" font-[family-name:var(--font-bright-melody)] hero-subheading mt-4 text-2xl font-semibold text-orange-100 lg:text-4xl">
               Soda Perfected
             </h2>
-            <p className="hero-body text-xl font-normal text-sky-950 leading-[.9]">
+            <p className="font-[family-name:var(--font-bright-melody)] hero-body text-xl font-normal text-orange-100 leading-[.9]">
               sugar free, naturally sweetened, and low in calories.
             </p>
             <Link
               href={"/"}
-              className="hero-button mt-12 text-xl font-semibold text-sky-950  bg-sky-400 hover:bg-sky-500 rounded-md px-5 py-3 transition-colors duration-150 ease-in-out tracking-wide "
+              className=" font-[family-name:var(--font-canopee)] hero-button mt-12 text-xl font-semibold text-orange-100 border-2 border-orange-100 hover:bg-red-300 rounded-[1rem] px-5 py-3 transition-colors duration-150 ease-in-out tracking-wide "
             >
               Shop Now
             </Link>
           </div>
         </div>
         <div className="grid text-side relative z-[80] h-screen place-items-center gap-4 md:grid-cols-2">
-          <Image
+          {/* <Image
             src={bunchedCans}
             alt="All cans bunched"
             width={500}
             height={500}
             className="w-full md:hidden"
-          />
+          /> */}
           <div className="">
-            <h2 className="text-side-heading text-balance uppercase text-5xl font-black text-sky-950 lg:text-7xl font-[family-name:var(--font-canopee)] ">
-              <TextSplitter text="Try all 5 Flavours" />
+            <h2 className="text-side-heading text-balance uppercase text-5xl font-black text-neutral-700 lg:text-7xl font-[family-name:var(--font-canopee)] ">
+              <TextSplitter text="Every Flavor, a New Adventure!" />
             </h2>
-            <p className="text-side-body mt-4 max-w-xl text-balance text-xl font-[500] text-sky-950 leading-[.99]">
+            <p className="font-[family-name:var(--font-bright-melody)] text-side-body mt-4 max-w-xl text-balance text-xl font-[500] text-neutral-500 leading-[.99]">
               Our tasteful drinks are made with the finest ingredients. Choose
               your favourite flavour and enjoy a delicious and refreshing drink.
               Our drinks are made with the finest ingredients, and we pride
