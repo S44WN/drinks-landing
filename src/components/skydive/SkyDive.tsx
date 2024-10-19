@@ -12,7 +12,7 @@ const SkyDive = ({}: Props) => {
     <Bounded className="skydive h-screen">
       <View className="h-screen w-screen">
         <SkyScene
-          flavour={"lemonLime"}
+          flavour={"blackCherry"}
           sentence={"Dive into the depth of flavour"}
         />
       </View>
