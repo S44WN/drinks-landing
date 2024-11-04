@@ -72,7 +72,7 @@ function Carousel({}: Props) {
 
   return (
     <section className="carousel relative grid h-screen grid-rows-[auto,4fr,auto] justify-center overflow-hidden bg-white py-12 text-orange-100">
-      <div className="background pointer-events-none absolute inset-0 bg-red-400" />
+      <div className="background pointer-events-none absolute inset-0 opacity-50 bg-red-500" />
 
       <WavyCircles className="absolute left-1/2 top-1/2 h-[120vmin] -translate-x-1/2 -translate-y-1/2 text-[#fe3c3c]" />
 
