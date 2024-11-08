@@ -1,7 +1,9 @@
 "use client";
 
 import { Bounded } from "@/components/Bounded";
+import { View } from "@react-three/drei";
 import clsx from "clsx";
+import AlternatinTextScene from "./AlternatinTextScene";
 
 type Props = object;
 
@@ -32,6 +34,9 @@ function AlternatingText({}: Props) {
       <div>
         <div className="grid relative">
           {/* view */}
+          <View className="alternating-text-view absolute left-0 right-0 h-screen w-full">
+            <AlternatinTextScene />
+          </View>
 
           {textGroup.map((text, index) => (
             <div
